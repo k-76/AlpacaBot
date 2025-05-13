@@ -38,8 +38,12 @@ class indicator():
         else:
             self.data = [app] + self.data
 
-#riceData = yf.download("SPY", start='2000-01-01')
-#SPYopen = reverse(reverse(pd.Series(priceData.Open.SPY)))
-#SPYhigh = reverse(reverse(pd.Series(priceData.High.SPY)))
-#SPYlow = reverse(reverse(pd.Series(priceData.Low.SPY)))
-#SPYclose = reverse(reverse(pd.Series(priceData.Close.SPY)))
+ticker = "UPRO"
+priceData = yf.download("SPY", start='2000-01-01')
+SPYopen = reverse(reverse(pd.Series(priceData.Open.SPY)))
+SPYclose = reverse(reverse(pd.Series(priceData.Close.SPY)))
+priceData2 = yf.download(ticker, start='2009-06-25')
+open = reverse(pd.Series(priceData2.Open.UPRO))
+high = reverse(pd.Series(priceData2.High.UPRO))
+low = reverse(pd.Series(priceData2.Low.UPRO))
+close = reverse(pd.Series(priceData2.Close.UPRO))
